@@ -1,11 +1,9 @@
-// wiki.js - Wiki route module.
+const controller = require("./controllers.js");
 
 const express = require("express");
 const router = express.Router();
 
 // Home page route.
-router.get("/", function (req, res) {
-    res.send("Alexander Escamilla");
-});
+router.get("/", controller.index);
 
 module.exports = router;
