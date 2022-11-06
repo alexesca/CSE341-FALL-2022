@@ -5,5 +5,6 @@ const router = express.Router();
 
 // Home page route.
 router.get("/", controller.index);
+router.get("/:_id", controller.id);
 
 module.exports = router;
