@@ -6,3 +6,17 @@ http://localhost:3000/contacts/5c76a8d17b9a7700253b4e7
 
 // 404
 http://localhost:3000/contacts/5c76a8d17b9a7700253b4e75
+
+
+
+
+// Prod
+
+// Get all
+https://css341-fall-2022.onrender.com/contacts
+
+// Get by id
+https://css341-fall-2022.onrender.com/contacts/5c76a8d17b9a7700253b4e7
+
+// 404
+https://css341-fall-2022.onrender.com/contacts/5c76a8d17b9a7700253b4e75
