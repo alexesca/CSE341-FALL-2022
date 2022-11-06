@@ -1,0 +1,8 @@
+// Get all
+http://localhost:3000/contacts
+
+// Get by id
+http://localhost:3000/contacts/5c76a8d17b9a7700253b4e7
+
+// 404
+http://localhost:3000/contacts/5c76a8d17b9a7700253b4e75
