@@ -1,0 +1,94 @@
+<html>
+<head>
+<title>README.MD</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #419ee9;}
+.s1 { color: #d4d4d4;}
+.s2 { color: #d4d4d4;}
+.s3 { color: #699856;}
+.s4 { color: #cd905b;}
+</style>
+</head>
+<body bgcolor="#1e1e1e">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+README.MD</font>
+</center></td></tr></table>
+<pre><span class="s0">#</span><span class="s1">Mongodb Driver</span>
+
+<span class="s0">### </span><span class="s1">Intro</span>
+<span class="s1">Managing business logic and database data is very complex. </span>
+<span class="s1">If we want to write the implementation for the connection between the DB and our server and the CRUD operations to manage our records or documents in our database, we would have to write a lot of code and deal with security, performance, latency, etc. </span>
+
+<span class="s0">### </span><span class="s1">Enter ODBC</span>
+
+<span class="s1">This is why we use drivers known as ODBC drivers. Open Database Connectivity is an interface or standard developed by Microsoft to allow applications to CRUD the data stored in database management systems</span><span class="s2">(</span><span class="s1">DMS</span><span class="s2">) </span><span class="s1">such as MicrosoftSQL Server, MongoDB, MySQL, PostgresQL,  etc. </span>
+
+<span class="s0">### </span><span class="s1">MongooseJS</span>
+
+<span class="s1">There are at least two main </span><span class="s3">`</span><span class="s1">ODBC</span><span class="s3">` </span><span class="s1">drivers used to access MongoDB data. MongooseJS and the MongoDB Driver Client. I will focus on the former one.</span>
+<span class="s1">Mongoose is a powerful  ODBC driver that includes schema validation, casting, business logic, query building, hooks, and more. For example, MongoDB</span><span class="s2">(</span><span class="s1">The database</span><span class="s2">) </span><span class="s1">is schemaless. Mongoose allows us to set rules and apply validation before we CRUD the database. It maps our schema written in JS to our MongoDB collection. Mongoose takes care of creating the collection with the name of our schema, CRUD and validates our data. Another powerful tool about mongoose is pluggable. You can create your own plugins to extend the functionality of your code.</span>
+
+
+<span class="s0">#### </span><span class="s1">Schema Example</span>
+
+<span class="s1">In order to create a schema you need to import the driver </span><span class="s3">`</span><span class="s1">mongoose</span><span class="s3">` </span><span class="s1">and create an instance of </span><span class="s3">`</span><span class="s1">new Schema</span><span class="s2">()</span><span class="s3">`</span><span class="s1">.</span>
+<span class="s3">`</span><span class="s1">new Schema</span><span class="s2">()</span><span class="s3">` </span><span class="s1">accepts a JS object with the properties of the collection.</span>
+
+<span class="s4">```js</span>
+<span class="s4">import mongoose from 'mongoose';</span>
+<span class="s4">const { Schema } = mongoose;</span>
+
+<span class="s4">const blogSchema = new Schema({</span>
+    <span class="s4">title:  String, // String is shorthand for {type: String}</span>
+    <span class="s4">author: String,</span>
+    <span class="s4">body:   String,</span>
+    <span class="s4">comments: [{ body: String, date: Date }],</span>
+    <span class="s4">date: { type: Date, default: Date.now },</span>
+    <span class="s4">hidden: Boolean,</span>
+    <span class="s4">meta: {</span>
+    <span class="s4">votes: Number,</span>
+    <span class="s4">favs:  Number</span>
+<span class="s4">}</span>
+<span class="s4">});</span>
+<span class="s4">```</span>
+
+
+<span class="s0">#### </span><span class="s1">Plugins</span>
+
+<span class="s1">Here is an example of how to add a plugin to a Mongoose Schema. This plugin adds a </span><span class="s3">`</span><span class="s1">loadedAt</span><span class="s3">` </span><span class="s1">field to all the models or collections in your database.</span>
+
+
+<span class="s4">```js</span>
+<span class="s4">module.exports = function loadedAtPlugin(schema, options) {</span>
+  <span class="s4">schema.virtual('loadedAt').</span>
+    <span class="s4">get(function() { return this._loadedAt; }).</span>
+    <span class="s4">set(function(v) { this._loadedAt = v; });</span>
+
+  <span class="s4">schema.post(['find', 'findOne'], function(docs) {</span>
+    <span class="s4">if (!Array.isArray(docs)) {</span>
+      <span class="s4">docs = [docs];</span>
+    <span class="s4">}</span>
+    <span class="s4">const now = new Date();</span>
+    <span class="s4">for (const doc of docs) {</span>
+      <span class="s4">doc.loadedAt = now;</span>
+    <span class="s4">}</span>
+  <span class="s4">});</span>
+<span class="s4">};</span>
+
+<span class="s4">// game-schema.js</span>
+<span class="s4">const loadedAtPlugin = require('./loadedAt');</span>
+<span class="s4">const blogSchema = new Schema({ ... });</span>
+<span class="s4">blogSchema.plugin(loadedAtPlugin);</span>
+<span class="s4">```</span>
+
+
+<span class="s0">### </span><span class="s1">Sources</span>
+
+<span class="s0">1. </span><span class="s2">https://www.progress.com/faqs/datadirect-odbc-faqs/what-is-an-odbc-driver#:~:text=An%20ODBC%20driver%20uses%20the,standard%20for%20accessing%20the%20data</span><span class="s1">.</span>
+<span class="s0">2. </span><span class="s2">https://mongoosejs.com/docs/subdocs.html</span>
+</pre>
+</body>
+</html>
