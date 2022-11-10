@@ -13,6 +13,13 @@ app.use(bodyParser.json())
 app.use("/", routes);
 
 
+function errorHandler (err, req, res, next) {
+    res.status(500)
+    res.send({ error: err })
+}
+
+app.use(errorHandler);
+
 app.listen(port, () => {
     console.log(`Example app listening on port ${port}`)
 })
