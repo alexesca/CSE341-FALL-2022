@@ -10,7 +10,7 @@ exports.id = async (req, res, next) => {
     if(contact) {
         res.send(contact);
     } else {
-        next(new Error("Contact not found."))
+        next("Contact not found.");
     }
 };
 

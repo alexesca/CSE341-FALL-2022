@@ -49,21 +49,44 @@ DELETE http://localhost:3000/contacts/636c7e823c183b005b9f7cca HTTP/1.1
 // PROD
 
 // Get all
-https://css341-fall-2022.onrender.com/contacts
+GET https://css341-fall-2022.onrender.com/contacts
 
 ###
 
 // Get by id
-https://css341-fall-2022.onrender.com/contacts/5c76a8d17b9a7700253b4e7
+GET https://css341-fall-2022.onrender.com/contacts/636c88902a02ef8e6e9f50e4
 
 ###
 
 // 404
-https://css341-fall-2022.onrender.com/contacts/5c76a8d17b9a7700253b4e75
+GET https://css341-fall-2022.onrender.com/contacts/5c76a8d17b9a7700253b4e75
 
 ###
 
-POST https://css341-fall-2022.onrender.com/contacts
-body {name: "Alex"}
+POST https://css341-fall-2022.onrender.com/contacts HTTP/1.1
+content-type: application/json
+
+{
+  "name": "Juanes",
+  "email": "alexander@gmail.com",
+  "phoneNumber": "208-444-8900",
+  "dateOfBirth": "11/02/2022"
+}
+
+###
+
+PUT https://css341-fall-2022.onrender.com/contacts/636c88902a02ef8e6e9f50e4 HTTP/1.1
+content-type: application/json
+
+{
+  "name": "Juanes Escamilla",
+  "email": "je@gmail.com",
+  "phoneNumber": "208-444-3333",
+  "dateOfBirth": "12/12/1994"
+}
+
+###
+
+DELETE https://css341-fall-2022.onrender.com/contacts/636c88902a02ef8e6e9f50e4 HTTP/1.1
 
 ###

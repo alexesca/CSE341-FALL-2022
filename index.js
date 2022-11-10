@@ -14,8 +14,7 @@ app.use("/", routes);
 
 
 function errorHandler (err, req, res, next) {
-    res.status(500)
-    res.send({ error: err })
+    res.status(500).send({ error: err })
 }
 
 app.use(errorHandler);
