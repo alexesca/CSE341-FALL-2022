@@ -21,6 +21,6 @@ exports.create = async (req, res) => {
 
 exports.update = async (req, res) => {
     const _id = req.params._id;
-    const contact = await Contact.updateOne(_id, req.body);
-    res.status(204).send(contact._id);
+    const contact = await Contact.findByIdAndUpdate(_id, req.body);
+    res.status(204).send({updated: "OK"});
 };
