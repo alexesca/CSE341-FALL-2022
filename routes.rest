@@ -41,6 +41,10 @@ content-type: application/json
 
 ###
 
+DELETE http://localhost:3000/contacts/636c7e823c183b005b9f7cca HTTP/1.1
+
+###
+
 
 // PROD
 

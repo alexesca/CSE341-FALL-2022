@@ -24,3 +24,9 @@ exports.update = async (req, res) => {
     const contact = await Contact.findByIdAndUpdate(_id, req.body);
     res.status(204).send({updated: "OK"});
 };
+
+exports.delete = async (req, res) => {
+    const _id = req.params._id;
+    await Contact.findByIdAndDelete(_id);
+    res.status(204).send({deleted: "OK"});
+};
