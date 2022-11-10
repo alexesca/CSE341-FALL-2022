@@ -7,10 +7,15 @@ exports.index = async (req, res) => {
 
 exports.id = async (req, res, next) => {
     const contact = await Contact.findById(req.params._id);
-    console.log(contact)
     if(contact) {
         res.send(contact);
     } else {
         next(new Error("Contact not found."))
     }
+};
+
+exports.create = async (req, res) => {
+    const contact = await Contact.create(req.body);
+    res.send(contact._id);
+
 };
