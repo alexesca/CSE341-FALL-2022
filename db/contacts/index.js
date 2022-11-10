@@ -1,13 +1,12 @@
 const mongoose = require('mongoose');
 
 const Schema = mongoose.Schema;
-const ObjectId = Schema.ObjectId;
 
 const ContactSchema = new Schema({
-    name: ObjectId,
+    name: String,
     email: String,
     phoneNumber: String,
-    dateOfBirth: Date
+    dateOfBirth: String
 });
 
 const ContactModel = mongoose.model('Contact', ContactSchema);

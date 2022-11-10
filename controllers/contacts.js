@@ -16,6 +16,11 @@ exports.id = async (req, res, next) => {
 
 exports.create = async (req, res) => {
     const contact = await Contact.create(req.body);
-    res.send(contact._id);
+    res.status(201).send(contact._id);
+};
 
+exports.update = async (req, res) => {
+    const _id = req.params._id;
+    const contact = await Contact.updateOne(_id, req.body);
+    res.status(204).send(contact._id);
 };

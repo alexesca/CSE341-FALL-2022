@@ -1,24 +1,65 @@
+// ENV
+
 ###
+
 // Get all
 http://localhost:3000/contacts
+
 ###
+
 // Get by id
-http://localhost:3000/contacts/5c76a8d17b9a7700253b4e7
+http://localhost:3000/contacts/636c7b7f6a8fccfca7825b30
+
 ###
+
 // 404
 http://localhost:3000/contacts/5c76a8d17b9a7700253b4e75
 
 ###
 
+POST http://localhost:3000/contacts HTTP/1.1
+content-type: application/json
 
-// Prod
+{
+  "name": "Alexander",
+  "email": "alexander@gmail.com",
+  "phoneNumber": "208-444-8900",
+  "dateOfBirth": "11/02/2022"
+}
+
+###
+
+PUT http://localhost:3000/contacts/
+content-type: application/json
+
+{
+  "name": "Alexander Escamilla",
+  "email": "alexanderEscamilla@gmail.com",
+  "phoneNumber": "208-444-0000",
+  "dateOfBirth": "11/02/1990"
+}
+
+###
+
+
+// PROD
 
 // Get all
 https://css341-fall-2022.onrender.com/contacts
+
 ###
+
 // Get by id
 https://css341-fall-2022.onrender.com/contacts/5c76a8d17b9a7700253b4e7
+
 ###
+
 // 404
 https://css341-fall-2022.onrender.com/contacts/5c76a8d17b9a7700253b4e75
+
+###
+
+POST https://css341-fall-2022.onrender.com/contacts
+body {name: "Alex"}
+
 ###
