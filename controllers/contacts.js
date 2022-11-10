@@ -28,5 +28,5 @@ exports.update = async (req, res) => {
 exports.delete = async (req, res) => {
     const _id = req.params._id;
     await Contact.findByIdAndDelete(_id);
-    res.status(204).send({deleted: "OK"});
+    res.status(200).send({deleted: "OK"});
 };
