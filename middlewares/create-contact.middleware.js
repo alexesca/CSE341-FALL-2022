@@ -1,11 +1,11 @@
 exports.createContact = (req, res, next) => {
     const body = req.body;
-    const name = body.name;
+    const firstName = body.firstName;
+    const lastName = body.lastName;
     const email = body.email;
-    const phoneNumber = body.phoneNumber;
-    const dateOfBirth = body.dateOfBirth;
+    const birthday = body.birthday;
     const favoriteColor = body.favoriteColor;
 
-    if(!name || !email || !phoneNumber || !dateOfBirth || !favoriteColor) next("Invalid create contact body. All values are required.");
+    if(!firstName || !lastName || !email || !birthday || !favoriteColor) next("Invalid create contact body. All values are required.");
     else next()
 }
