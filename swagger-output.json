@@ -5,10 +5,10 @@
     "description": "Description",
     "version": "1.0.0"
   },
-  "host": "https://css341-fall-2022.onrender.com",
+  "host": "css341-fall-2022.onrender.com",
   "basePath": "/",
   "schemes": [
-    "http"
+    "https"
   ],
   "paths": {
     "/": {
@@ -198,5 +198,6 @@
         }
       }
     }
-  }
+  },
+  "swaggerUIPath": "/docs"
 }
