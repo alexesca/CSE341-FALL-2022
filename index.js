@@ -6,11 +6,13 @@ require("./db/connection.js");
 var bodyParser = require('body-parser');
 const swaggerUi = require('swagger-ui-express');
 const swaggerDocument = require('./swagger-output.json');
+var cors = require('cors')
 
 
 const app = express()
 const port = process.env.PORT || 3000;
 app.use(bodyParser.json())
+app.use(cors())
 
 app.use('/docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 app.use("/", routes);
