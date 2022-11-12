@@ -5,7 +5,7 @@ const doc = {
         title: 'My API',
         description: 'Description',
     },
-    host: 'localhost:3000',
+    host: process.env.APP_HOST,
     schemes: ['http'],
     definitions: {
         Contacts: [{

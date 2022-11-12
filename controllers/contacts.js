@@ -60,7 +60,7 @@ exports.update = async (req, res) => {
     /*  #swagger.parameters['Contacts'] = {
                 in: 'body',
                 description: 'Model of the new contact.',
-                schema: { $ref: '#/definitions/Contacts' }
+                schema: { $ref: '#/definitions/Contact' }
         } */
     const _id = req.params._id;
     await Contact.findByIdAndUpdate(_id, req.body);

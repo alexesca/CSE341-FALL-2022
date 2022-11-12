@@ -112,7 +112,7 @@
             "in": "body",
             "description": "Model of the new contact.",
             "schema": {
-              "$ref": "#/definitions/Contacts"
+              "$ref": "#/definitions/Contact"
             }
           }
         ],
