@@ -5,7 +5,7 @@ const doc = {
         title: 'My API',
         description: 'Description',
     },
-    host: process.env.APP_HOST,
+    host: "https://css341-fall-2022.onrender.com",
     schemes: ['http'],
     definitions: {
         Contacts: [{
