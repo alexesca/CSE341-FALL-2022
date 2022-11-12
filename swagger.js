@@ -8,13 +8,20 @@ const doc = {
     host: 'localhost:3000',
     schemes: ['http'],
     definitions: {
-        Contacts: {
+        Contacts: [{
             name: "Simon Doe",
             email: "sd@gmail.com",
             phoneNumber: "801-500-3266",
             favoriteColor: "Red",
             dateOfBirth: "09/12/2000"
-        },
+        }],
+        Contact: {
+            name: "Simon Doe",
+            email: "sd@gmail.com",
+            phoneNumber: "801-500-3266",
+            favoriteColor: "Red",
+            dateOfBirth: "09/12/2000"
+        }
     }
 };
 

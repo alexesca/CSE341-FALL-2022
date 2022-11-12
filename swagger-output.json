@@ -28,7 +28,10 @@
         "parameters": [],
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "User successfully obtained.",
+            "schema": {
+              "$ref": "#/definitions/Contacts"
+            }
           }
         }
       },
@@ -44,13 +47,20 @@
             "in": "body",
             "description": "Model of the new contact.",
             "schema": {
-              "$ref": "#/definitions/Contacts"
+              "$ref": "#/definitions/Contact"
             }
           }
         ],
         "responses": {
           "201": {
-            "description": "Created"
+            "description": "User successfully  .",
+            "schema": {
+              "type": "string",
+              "example": "Newly created Contact ID",
+              "xml": {
+                "name": "main"
+              }
+            }
           }
         }
       }
@@ -77,7 +87,10 @@
         ],
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "User successfully obtained.",
+            "schema": {
+              "$ref": "#/definitions/Contact"
+            }
           }
         }
       },
@@ -133,6 +146,34 @@
   },
   "definitions": {
     "Contacts": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "example": "Simon Doe"
+          },
+          "email": {
+            "type": "string",
+            "example": "sd@gmail.com"
+          },
+          "phoneNumber": {
+            "type": "string",
+            "example": "801-500-3266"
+          },
+          "favoriteColor": {
+            "type": "string",
+            "example": "Red"
+          },
+          "dateOfBirth": {
+            "type": "string",
+            "example": "09/12/2000"
+          }
+        }
+      }
+    },
+    "Contact": {
       "type": "object",
       "properties": {
         "name": {

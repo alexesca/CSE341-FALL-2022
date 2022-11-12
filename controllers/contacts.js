@@ -4,6 +4,10 @@ exports.index = async (req, res) => {
     // #swagger.tags = ['Contacts']
     // #swagger.summary = 'Find all contacts.'
     // #swagger.description = 'This endpoint returns a list with all the contacts in the database.'
+    /* #swagger.responses[200] = {
+        description: 'User successfully obtained.',
+        schema: { $ref: '#/definitions/Contacts' }
+} */
     const contacts = await Contact.find()
     res.send(contacts)
 };
@@ -17,6 +21,11 @@ exports.id = async (req, res, next) => {
         required: true,
         type: "string",
         schema: "636c889a2a02ef8e6e9f50e6"
+} */
+
+    /* #swagger.responses[200] = {
+        description: 'User successfully obtained.',
+        schema: { $ref: '#/definitions/Contact' }
 } */
 
     const contact = await Contact.findById(req.params._id);
@@ -34,8 +43,12 @@ exports.create = async (req, res) => {
     /*  #swagger.parameters['Contacts'] = {
                     in: 'body',
                     description: 'Model of the new contact.',
-                    schema: { $ref: '#/definitions/Contacts' }
+                    schema: { $ref: '#/definitions/Contact' }
             } */
+    /* #swagger.responses[201] = {
+    description: 'User successfully created.',
+    schema: "Newly created Contact ID"
+} */
     const contact = await Contact.create(req.body);
     res.status(201).send(contact._id);
 };
