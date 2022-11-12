@@ -18,6 +18,7 @@ exports.id = async (req, res, next) => {
         type: "string",
         schema: "636c889a2a02ef8e6e9f50e6"
 } */
+
     const contact = await Contact.findById(req.params._id);
     if(contact) {
         res.send(contact);
@@ -43,6 +44,11 @@ exports.update = async (req, res) => {
     // #swagger.tags = ['Contacts']
     // #swagger.summary = 'Update contact.'
     // #swagger.description = 'This endpoint updates a contact. All fields are required for a successful update.'
+    /*  #swagger.parameters['Contacts'] = {
+                in: 'body',
+                description: 'Model of the new contact.',
+                schema: { $ref: '#/definitions/Contacts' }
+        } */
     const _id = req.params._id;
     await Contact.findByIdAndUpdate(_id, req.body);
     res.sendStatus(204)
@@ -52,7 +58,6 @@ exports.delete = async (req, res) => {
     // #swagger.tags = ['Contacts']
     // #swagger.summary = 'Delete contact.'
     // #swagger.description = 'This endpoint deletes a contact if a valid ID is passed.'
-    // #swagger.operationId = 'Your_operationId_here'
     const _id = req.params._id;
     await Contact.findByIdAndDelete(_id);
     res.sendStatus(200)

@@ -95,27 +95,11 @@
             "type": "string"
           },
           {
-            "name": "body",
+            "name": "Contacts",
             "in": "body",
+            "description": "Model of the new contact.",
             "schema": {
-              "type": "object",
-              "properties": {
-                "name": {
-                  "example": "any"
-                },
-                "email": {
-                  "example": "any"
-                },
-                "phoneNumber": {
-                  "example": "any"
-                },
-                "dateOfBirth": {
-                  "example": "any"
-                },
-                "favoriteColor": {
-                  "example": "any"
-                }
-              }
+              "$ref": "#/definitions/Contacts"
             }
           }
         ],
@@ -131,7 +115,6 @@
         ],
         "summary": "Delete contact.",
         "description": "This endpoint   a contact if a valid ID is passed.",
-        "operationId": "Your_operationId_here",
         "parameters": [
           {
             "name": "_id",
