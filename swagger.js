@@ -5,7 +5,7 @@ const doc = {
         title: 'My API',
         description: 'Description',
     },
-    host: "css341-fall-2022.onrender.com",
+    swaggerUIPath: '/api-docs',
     schemes: ['http'],
     definitions: {
         Contacts: [{
