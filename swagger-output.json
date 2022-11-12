@@ -48,6 +48,9 @@
                 },
                 "dateOfBirth": {
                   "example": "any"
+                },
+                "favoriteColor": {
+                  "example": "any"
                 }
               }
             }
@@ -102,6 +105,9 @@
                   "example": "any"
                 },
                 "dateOfBirth": {
+                  "example": "any"
+                },
+                "favoriteColor": {
                   "example": "any"
                 }
               }
