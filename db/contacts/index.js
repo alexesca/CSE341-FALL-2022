@@ -5,7 +5,7 @@ const Schema = mongoose.Schema;
 const ContactSchema = new Schema({
     birthday: String,
     email: String,
-    favoriteColor: String
+    favoriteColor: String,
     firstName: String,
     lastName: String,
 });

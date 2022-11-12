@@ -10,18 +10,18 @@ const doc = {
     schemes: ['https'],
     definitions: {
         Contacts: [{
-            name: "Simon Doe",
+            firstName: "Simon",
+            lastName: "Perez",
             email: "sd@gmail.com",
-            phoneNumber: "801-500-3266",
+            birthday: "09/12/2000",
             favoriteColor: "Red",
-            dateOfBirth: "09/12/2000"
         }],
         Contact: {
-            name: "Simon Doe",
+            firstName: "Simon",
+            lastName: "Perez",
             email: "sd@gmail.com",
-            phoneNumber: "801-500-3266",
+            birthday: "09/12/2000",
             favoriteColor: "Red",
-            dateOfBirth: "09/12/2000"
         }
     }
 };
