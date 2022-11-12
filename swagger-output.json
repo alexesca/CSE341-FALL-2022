@@ -150,25 +150,25 @@
       "items": {
         "type": "object",
         "properties": {
-          "name": {
+          "firstName": {
             "type": "string",
-            "example": "Simon Doe"
+            "example": "Simon"
+          },
+          "lastName": {
+            "type": "string",
+            "example": "Perez"
           },
           "email": {
             "type": "string",
             "example": "sd@gmail.com"
           },
-          "phoneNumber": {
+          "birthday": {
             "type": "string",
-            "example": "801-500-3266"
+            "example": "09/12/2000"
           },
           "favoriteColor": {
             "type": "string",
             "example": "Red"
-          },
-          "dateOfBirth": {
-            "type": "string",
-            "example": "09/12/2000"
           }
         }
       }
@@ -176,25 +176,25 @@
     "Contact": {
       "type": "object",
       "properties": {
-        "name": {
+        "firstName": {
           "type": "string",
-          "example": "Simon Doe"
+          "example": "Simon"
+        },
+        "lastName": {
+          "type": "string",
+          "example": "Perez"
         },
         "email": {
           "type": "string",
           "example": "sd@gmail.com"
         },
-        "phoneNumber": {
+        "birthday": {
           "type": "string",
-          "example": "801-500-3266"
+          "example": "09/12/2000"
         },
         "favoriteColor": {
           "type": "string",
           "example": "Red"
-        },
-        "dateOfBirth": {
-          "type": "string",
-          "example": "09/12/2000"
         }
       }
     }
