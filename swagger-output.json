@@ -5,7 +5,7 @@
     "description": "Description",
     "version": "1.0.0"
   },
-  "host": "localhost:8080",
+  "host": "localhost:3000",
   "basePath": "/",
   "schemes": [
     "http"
@@ -23,7 +23,8 @@
         "tags": [
           "Contacts"
         ],
-        "description": "",
+        "summary": "Find all contacts.",
+        "description": "This endpoint returns a list with all the contacts in the database.",
         "parameters": [],
         "responses": {
           "200": {
@@ -35,30 +36,15 @@
         "tags": [
           "Contacts"
         ],
-        "description": "",
+        "summary": "Create contact and return ID. All fields are required.",
+        "description": "This endpoint   a contact and returns the newly   contact ID.",
         "parameters": [
           {
-            "name": "body",
+            "name": "Contacts",
             "in": "body",
+            "description": "Model of the new contact.",
             "schema": {
-              "type": "object",
-              "properties": {
-                "name": {
-                  "example": "any"
-                },
-                "email": {
-                  "example": "any"
-                },
-                "phoneNumber": {
-                  "example": "any"
-                },
-                "dateOfBirth": {
-                  "example": "any"
-                },
-                "favoriteColor": {
-                  "example": "any"
-                }
-              }
+              "$ref": "#/definitions/Contacts"
             }
           }
         ],
@@ -74,13 +60,19 @@
         "tags": [
           "Contacts"
         ],
-        "description": "",
+        "summary": "Find contact by ID.",
+        "description": "This endpoint returns a contact found with the provided ID",
         "parameters": [
           {
             "name": "_id",
             "in": "path",
             "required": true,
-            "type": "string"
+            "type": "string",
+            "description": "Id of the desired contact.",
+            "schema": {
+              "type": "string",
+              "example": "636c889a2a02ef8e6e9f50e6"
+            }
           }
         ],
         "responses": {
@@ -93,7 +85,8 @@
         "tags": [
           "Contacts"
         ],
-        "description": "",
+        "summary": "Update contact.",
+        "description": "This endpoint   a contact. All fields are required for a successful update.",
         "parameters": [
           {
             "name": "_id",
@@ -136,7 +129,9 @@
         "tags": [
           "Contacts"
         ],
-        "description": "",
+        "summary": "Delete contact.",
+        "description": "This endpoint   a contact if a valid ID is passed.",
+        "operationId": "Your_operationId_here",
         "parameters": [
           {
             "name": "_id",
@@ -149,6 +144,33 @@
           "200": {
             "description": "OK"
           }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "Contacts": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string",
+          "example": "Simon Doe"
+        },
+        "email": {
+          "type": "string",
+          "example": "sd@gmail.com"
+        },
+        "phoneNumber": {
+          "type": "string",
+          "example": "801-500-3266"
+        },
+        "favoriteColor": {
+          "type": "string",
+          "example": "Red"
+        },
+        "dateOfBirth": {
+          "type": "string",
+          "example": "09/12/2000"
         }
       }
     }

@@ -1,6 +1,3 @@
-
-
-
 const controller = require("../controllers/contacts.js");
 const contactMiddlewares = require("./../middlewares/create-contact.middleware.js");
 const express = require("express");
