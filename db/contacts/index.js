@@ -7,6 +7,7 @@ const ContactSchema = new Schema({
     email: String,
     phoneNumber: String,
     dateOfBirth: String
+    favoriteColor: String
 });
 
 const ContactModel = mongoose.model('Contact', ContactSchema);

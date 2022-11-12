@@ -4,7 +4,8 @@ exports.createContact = (req, res, next) => {
     const email = body.email;
     const phoneNumber = body.phoneNumber;
     const dateOfBirth = body.dateOfBirth;
+    const favoriteColor = body.favoriteColor;
 
-    if(!name || !email || !phoneNumber || !dateOfBirth) next("Invalid create contact body. All values are required.");
+    if(!name || !email || !phoneNumber || !dateOfBirth || !favoriteColor) next("Invalid create contact body. All values are required.");
     else next()
 }
