@@ -54,7 +54,7 @@ GET https://css341-fall-2022.onrender.com/contacts
 ###
 
 // Get by id
-GET https://css341-fall-2022.onrender.com/contacts/636c88902a02ef8e6e9f50e4
+GET https://css341-fall-2022.onrender.com/contacts/636c8a28816c15ee1103b7d1
 
 ###
 
@@ -67,26 +67,26 @@ POST https://css341-fall-2022.onrender.com/contacts HTTP/1.1
 content-type: application/json
 
 {
-  "name": "Juanes",
-  "email": "alexander@gmail.com",
+  "name": "Jorge",
+  "email": "j@gmail.com",
   "phoneNumber": "208-444-8900",
   "dateOfBirth": "11/02/2022"
 }
 
 ###
 
-PUT https://css341-fall-2022.onrender.com/contacts/636c88902a02ef8e6e9f50e4 HTTP/1.1
+PUT https://css341-fall-2022.onrender.com/contacts/636c8d8744f529d8bff05596 HTTP/1.1
 content-type: application/json
 
 {
-  "name": "Juanes Escamilla",
-  "email": "je@gmail.com",
-  "phoneNumber": "208-444-3333",
-  "dateOfBirth": "12/12/1994"
+  "name": "Marcus Moreira",
+  "email": "mm@gmail.com",
+  "phoneNumber": "208-444-8900",
+  "dateOfBirth": "11/02/2022"
 }
 
 ###
 
-DELETE https://css341-fall-2022.onrender.com/contacts/636c88902a02ef8e6e9f50e4 HTTP/1.1
+DELETE https://css341-fall-2022.onrender.com/contacts/636c8d8744f529d8bff05596 HTTP/1.1
 
 ###
