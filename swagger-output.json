@@ -20,6 +20,9 @@
     },
     "/contacts/": {
       "get": {
+        "tags": [
+          "Contacts"
+        ],
         "description": "",
         "parameters": [],
         "responses": {
@@ -29,6 +32,9 @@
         }
       },
       "post": {
+        "tags": [
+          "Contacts"
+        ],
         "description": "",
         "parameters": [
           {
@@ -65,6 +71,9 @@
     },
     "/contacts/{_id}": {
       "get": {
+        "tags": [
+          "Contacts"
+        ],
         "description": "",
         "parameters": [
           {
@@ -81,6 +90,9 @@
         }
       },
       "put": {
+        "tags": [
+          "Contacts"
+        ],
         "description": "",
         "parameters": [
           {
@@ -121,6 +133,9 @@
         }
       },
       "delete": {
+        "tags": [
+          "Contacts"
+        ],
         "description": "",
         "parameters": [
           {

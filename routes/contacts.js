@@ -6,6 +6,8 @@ const contactMiddlewares = require("./../middlewares/create-contact.middleware.j
 const express = require("express");
 const router = express.Router();
 
+
+
 // Home page route.
 router
     .get("/", controller.index)
